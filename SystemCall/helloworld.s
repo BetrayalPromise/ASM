@@ -1,19 +1,25 @@
 # helloworld.s
-
     .data
 message:
-    .ascii "hello world"
+    .asciz "hello, world!\n"
 length = . - message
 
     .text
-    .global _main           # must be declared for linker
+    .globl _main                    # must be declared for linker
 _main:
-    movq    $200004, %rax           # 系统调用号，_write  
-    movq    $1, %rdi                # 文件描述符  
-    movq    message(%rip), %rsi     # 缓冲区指针  
-    movq    length(%rip), %rdx      # 显示的字符数  
+    # 系统调用号，_write
+    movl    $0x2000004, %eax
+    # 文件描述符      
+    movl    $1, %edi
+    # 显示的字符数              
+    leaq    message(%rip), %rsi  
+    # 缓冲区指针   
+    movl    $14, %edx
     syscall
 
-    movq    $2000001, %rax          # 系统调用号，_exit
-    movq    $0, %rdi                # 传给_exit的参数
+    movq    $0x2000001, %rax
+    movq    $0x0, %rdi                           
     syscall
+
+#    movq $0x0, %rax
+#    retq
