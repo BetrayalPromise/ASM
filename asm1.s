@@ -6,11 +6,21 @@ helloworld:
     .globl  _main
 _main:
     pushq   %rbp
-    movq   %rsp, %rbp
+    movq    %rsp, %rbp
 # libcall
-    leaq    helloworld(%rip), %rdi
-    callq   _printf
-
+    callq _use_libcall
     popq    %rbp
     movq    $0x0, %rax
     retq
+
+# void libcall(void)
+_use_libcall:
+    pushq   %rbp
+    movq    %rsp, %rbp
+    leaq    helloworld(%rip), %rdi
+    callq   _printf
+    popq    %rbp
+    retq
+
+_use_syscall:
+    
