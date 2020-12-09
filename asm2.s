@@ -12,13 +12,12 @@ _main:
     movq    $0x2000004,     %rax
     movq    $0x1,           %rdi         
     leaq    message(%rip),  %rsi
-    movq    $length,        %dx
+    movq    $length,        %rdx
     syscall
 
     # exit系统调用
     movq    $0x2000001,     %rax        
     movq    $0x0,           %rdi
     syscall
-
 #    movq $0x0, %rax
 #    retq
