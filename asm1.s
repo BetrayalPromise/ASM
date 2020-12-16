@@ -21,6 +21,3 @@ _use_libcall:
     callq   _printf
     popq    %rbp
     retq
-
-_use_syscall:
-    
