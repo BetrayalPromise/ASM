@@ -139,3 +139,15 @@ clang asm1.s -o asm1
 执行
 cd到asm1所在的目录,输入./asm1回车就可以看到hello world!了
 ```
+### 3.调试
+```Shell
+//加入调试
+clang -g asm1.s -o asm1
+//载入程序
+lldb asm1 
+// main函数处下断点
+b mian
+// 跑起来
+run
+大多使用lldb指令自行百度(以后关于lldb会专门开一个章节讲解)
+```
