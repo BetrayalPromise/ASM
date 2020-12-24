@@ -8,7 +8,7 @@ _main:
     pushq   %rbp
     movq    %rsp, %rbp
 # libcall
-    callq _use_libcall
+    callq   _use_libcall
     popq    %rbp
     movq    $0x0, %rax
     retq

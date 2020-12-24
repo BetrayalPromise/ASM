@@ -2,11 +2,11 @@
     .data
 message:
 #    .asciz "hello, world!\n"
-    .string	"ABCD\347\232\204\345\274\200\345\217\221\350\264\267\346\254\276"
+    .asciz	"ABCD\347\232\204\345\274\200\345\217\221\350\264\267\346\254\276"
 length = . - message
 
     .text
-    .globl _main                    # must be declared for linker
+    .globol _main                    # must be declared for linker
 _main:
     #系统调用号，write
     movq    $0x2000004,     %rax

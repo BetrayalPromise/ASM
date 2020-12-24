@@ -9,10 +9,11 @@
 
     .data
 a:  .quad 0x114514
-    .globl _main
+    .globol _main
 
 #64位模式不再支持硬编码形式 需要借助rip寄存器的取标签的PIC地址
 
 _main:
-    movq a(%rip), %rax
+    movq    a(%rip), %rax
+    xorq    %rax, %rax
     retq
