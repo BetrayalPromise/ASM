@@ -151,3 +151,32 @@ b mian
 run
 大多使用lldb指令自行百度(以后关于lldb会专门开一个章节讲解)
 ```
+### 4.汇编代码如何给Swift用
+本人目前能够正常运行的方法是将写好的汇编代码以C函数的方式向上暴露接口,写一个C语言的.h和.c文件将汇编函数用
+```Assembly
+    .data
+message:
+#    .asciz "hello, world!\n"
+    .asciz    "ABCD\347\232\204\345\274\200\345\217\221\350\264\267\346\254\276"
+length = . - message
+
+    .text
+    .globl _show
+
+_show:
+    movq    $0x2000004,     %rax
+    movq    $0x1,           %rdi
+    leaq    message(%rip),  %rsi
+    movq    $length,        %rdx
+    syscall
+    retq
+```
+tool.h
+```C
+extern void show(void);
+```
+tool.c
+```C
+extern void show(void);
+```
+可以通桥接方式引入工程,SPM暂时未测试,就可以直接调用汇编的show函数了
