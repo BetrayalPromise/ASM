@@ -83,3 +83,48 @@ Assembly代码
 ### 10.$0x开头为立即数
 ### 11.0x开头为内存地址
 ### 12.a(b,c)这种类型的汇编指令理解因为我b*c+a,且c的值一般为1,2,4较为常见(个人猜测应该和内存对齐有关)
+### 13.AT&T汇编赋值是与Intel汇编理解相反的,顺着度度,与高级语言读法相反
+## 第一个汇编程序(hello world!)程序员都懂得
+### 1.新建一个文本文件,文件名随便,后缀为.s
+```Assembly   
+# 调用C库函数printf
+
+; 定义文本段(我自己这么叫的)
+    .section    __TEXT, __cstring
+; 定一个字符串为"hello world!"
+helloworld:							
+    .asciz  "hello world!\n"
+    .text
+; 声明程序入口为_main
+    .globl  _main
+; main函数主题
+_main:
+; 栈底指针入栈
+    pushq   %rbp
+; 将rsp的值赋值给rbp
+    movq    %rsp, %rbp
+# libcall
+; 调用_use_libcall函数
+    callq   _use_libcall
+; 栈底指针出栈恢复调用前现场
+    popq    %rbp
+; 将0x0赋值给rax相当于return 0的作用
+    movq    $0x0, %rax
+; 函数结束
+    retq
+
+# void libcall(void)
+_use_libcall:
+; 栈底指针入栈
+    pushq   %rbp
+; 将rsp的值赋值给rbp
+    movq    %rsp, %rbp
+; 取得helloworld变量的存放位置(简单理解就是指针)
+    leaq    helloworld(%rip), %rdi
+; 调用 print函数
+    callq   _printf
+; 栈底指针出栈恢复调用前现场
+    popq    %rbp
+; 函数结束
+    retq
+```
