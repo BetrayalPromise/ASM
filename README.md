@@ -1,5 +1,5 @@
 # X86汇编
-## 寄存器
+## 汇编知识点
 ### 1.认识寄存器
 r开头的是64bit(例如rax,rbx,rcx,rdx...), e开头的32bit(例如eax,ebx,ecx,edx...), h表示高几位(例如ah,bh,ch,dh...), l表示低几位(例如al,bl,cl,dl...)
 ### 2.寄存器名称
