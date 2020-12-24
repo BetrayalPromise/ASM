@@ -1,7 +1,7 @@
 # 调用C库函数    
     .section    __TEXT, __cstring
 helloworld:
-    .asciz  "helloworld\n"
+    .asciz  "hello world!\n"
     .text
     .globl  _main
 _main:
