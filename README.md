@@ -72,7 +72,7 @@ Assembly代码
 0x1000026b1 <+321>: movq   0x5b48(%rip), %rax        ; ASM.a14 : Swift.Int
 0x1000026b8 <+328>: movq   %rax, -0x48(%rbp)         ; 将rax存的值放在栈开始地址负向偏移0x48处
 0x1000026bc <+332>: movq   0x5b45(%rip), %rax        ; ASM.a15 : Swift.Int
-0x1000026c3 <+339>: movq   %rax, -0x50(%rbp)         ; 将rax存的值放在栈开始地址负向偏移0x48处
+0x1000026c3 <+339>: movq   %rax, -0x50(%rbp)         ; 将rax存的值放在栈开始地址负向偏移0x50处
 0x1000026c7 <+343>: movq   0x5b42(%rip), %rax        ; ASM.a16 : Swift.Int
 
 ```
