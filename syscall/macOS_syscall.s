@@ -1,4 +1,4 @@
-    .globl _mac_syscall
+    .globol _mac_syscall
 
 _mac_syscall:
     pushq   %rbp

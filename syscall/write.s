@@ -15,9 +15,5 @@ _main:
     movq    $length,        %rdx
     syscall
 
-    # exit系统调用
-    movq    $0x2000001,     %rax        
-    movq    $0x0,           %rdi
-    syscall
-#    movq $0x0, %rax
-#    retq
+    movq    $0x0, %rax
+    retq

@@ -180,3 +180,11 @@ tool.c
 extern void show(void);
 ```
 可以通桥接方式引入工程,SPM暂时未测试,就可以直接调用汇编的show函数了
+
+### 5.系统调用
+系统调用在/usr/include/sys/syscall.h中定义
+SYS_exit0
+```C
+#define	SYS_exit 1
+```
+
