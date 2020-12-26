@@ -186,21 +186,21 @@ extern void show(void);
 系统调用在/usr/include/sys/syscall.h中定义
 - ### 1. SYS_exit
 ```C
-C库函数
+/usr/include/stdlib.h
 /// exit函数
 /// - Parameter statu: 离开状态值
 void exit(int status);
 ```
 - ### 2. SYS_fork
 ```C
-C库函数 
-/// exit函数
+/usr/include/unistd.h
+/// fork函数
 /// - Returns: 进程ID,父进程的fork返回一个正数表示子进程的进程ID,子进程的fork返回0
 pid_t fork(void);
 ```
 - ### 3. SYS_read
 ```C
-C库函数 
+/usr/include/unistd.h
 /// read函数
 /// - Parameter fd: 文件描述符
 /// - Parameter buf: 通常是一个字符串，需要写入的字符串

@@ -2,12 +2,13 @@
     .globl _main
 
 _main:
-    pushq %rbp
+    pushq   %rbp
+    movq    %rbp, %rsp
 
-    movq    $0x2000004,         %rax
-    movq    $0x1,               %rdi         
-    leaq    L_.str.0(%rip),     %rsi
-    movq    $L_.str.0.length,   %rdx
+    movq    $0x2000004, %rax
+    movq    $0x1, %rdi         
+    leaq    L_.str.0(%rip), %rsi
+    movq    $L_.str.0.length, %rdx
     syscall
 
     popq %rbp
