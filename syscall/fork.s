@@ -4,6 +4,6 @@ _main:
     movq    $0x2000003, %rax
     syscall
 
-    xorq    %rax, %rax
+    movq    $0x0, %rax
     retq
 

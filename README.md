@@ -208,3 +208,12 @@ pid_t fork(void);
 /// - Returns: 成功返回读取的字节数，出错返回-1并设置errno，如果在调read之前已到达文件末尾，则这次read返回0
 ssize_t read(int fd, void *buf, size_t count);
 ```
+- ### 4. SYS_open
+```C
+/usr/include/fcntl.h
+/// open函数
+/// - Parameter path: 路径
+/// - Parameter flags: 处理标准
+/// - Returns: 返回值 若所有欲核查的权限都通过了检查则返回0 值，表示成功，只要有一个权限被禁止则返回-1
+int open(const char * path,int flags...);
+```

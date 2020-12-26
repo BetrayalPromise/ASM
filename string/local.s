@@ -3,7 +3,7 @@
 
 _main:
     pushq   %rbp
-    movq    %rbp, %rsp
+    movq    %rsp, %rbp
 
     movq    $0x2000004, %rax
     movq    $0x1, %rdi         

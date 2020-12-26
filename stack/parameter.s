@@ -3,7 +3,7 @@
 
 _main:
 	pushq   %rbp            # rbp(通常存放函数栈帧基地址)
-	movq	%rsp, %rbp      # 清空栈
+	movq    %rsp, %rbp     # 清空栈
 	subq	$0x24, %rsp       # 栈生长0x24(栈顶正向移动0x24)
 	
 	movq	$0x0, -0x8(%rbp)  # 0x0入栈
