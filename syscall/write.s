@@ -7,6 +7,7 @@ length = . - message
 
     .text
     .global _main                    # must be declared for linker
+    .p2align 4, 0x90
 _main:
     #系统调用号，write
     movq    $0x2000004, %rax
