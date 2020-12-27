@@ -3,7 +3,7 @@
 helloworld:
     .asciz  "hello world!\n"
     .text
-    .globl  _main
+    .global  _main
 _main:
     pushq   %rbp
     movq    %rsp, %rbp

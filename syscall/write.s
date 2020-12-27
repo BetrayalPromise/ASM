@@ -6,7 +6,7 @@ message:
 length = . - message
 
     .text
-    .globol _main                    # must be declared for linker
+    .global _main                    # must be declared for linker
 _main:
     #系统调用号，write
     movq    $0x2000004, %rax
