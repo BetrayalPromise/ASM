@@ -183,37 +183,4 @@ extern void show(void);
 可以通桥接方式引入工程,SPM暂时未测试,就可以直接调用汇编的show函数了
 
 - 系统调用
-系统调用在/usr/include/sys/syscall.h中定义
-- ### 1. SYS_exit
-```C
-/usr/include/stdlib.h
-/// exit函数
-/// - Parameter statu: 离开状态值
-void exit(int status);
-```
-- ### 2. SYS_fork
-```C
-/usr/include/unistd.h
-/// fork函数
-/// - Returns: 进程ID,父进程的fork返回一个正数表示子进程的进程ID,子进程的fork返回0
-pid_t fork(void);
-```
-- ### 3. SYS_read
-```C
-/usr/include/unistd.h
-/// read函数
-/// - Parameter fd: 文件描述符
-/// - Parameter buf: 通常是一个字符串，需要写入的字符串
-/// - Parameter count: 是每次写入的字节数
-/// - Returns: 成功返回读取的字节数，出错返回-1并设置errno，如果在调read之前已到达文件末尾，则这次read返回0
-ssize_t read(int fd, void *buf, size_t count);
-```
-- ### 4. SYS_open
-```C
-/usr/include/fcntl.h
-/// open函数
-/// - Parameter path: 路径
-/// - Parameter flags: 处理标准
-/// - Returns: 返回值 若所有欲核查的权限都通过了检查则返回0 值，表示成功，只要有一个权限被禁止则返回-1
-int open(const char * path,int flags...);
-```
+系统调用在/usr/include/sys/syscall.h中定义,具体情况可以用man -a exit/open/...详细查看
