@@ -10,6 +10,13 @@ int main() {
  */
 
 _main:
-    movq    $0x2000001, %rax   ;系统调用号
-    movq    $0, %rdi           ;传递参数
+    pushq   %rbp
+    movq    %rsp, %rbp
+
+# syscall exit(0)
+    movq    $0x2000001, %rax   # 系统调用号
+    movq    $0, %rdi           # 传递参数
     syscall
+
+    popq    %rbp
+    retq

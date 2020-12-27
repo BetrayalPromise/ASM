@@ -24,7 +24,7 @@ L_.str.0.length = . - L_.str.0
 /*
 int main(int argc, char *argv[]) {
     printf("ABCD的开发贷款0");
-    return 0;    
+    return 0;
 }
 */
 

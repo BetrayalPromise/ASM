@@ -1,7 +1,7 @@
-    .data
+    .section __DATA, __data
 path:
     .asciz	"/Users/user0/Desktop/163.txt"
-
+    .section __TEXT, __text
     .global _main
     .p2align 4, 0x90
 _main:
