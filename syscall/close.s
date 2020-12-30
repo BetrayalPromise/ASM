@@ -3,8 +3,8 @@
     .p2align 4, 0x90
 
 _main:
-    pushq   %rbp
-    movq    %rsp, %rbp
-    xorq    %rax, %rax
-    popq    %rbp
+    pushq %rbp
+    movq %rsp, %rbp
+    xorq %rax, %rax
+    popq %rbp
     retq

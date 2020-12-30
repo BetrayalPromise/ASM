@@ -10,11 +10,11 @@ length = . - message
     .p2align 4, 0x90
 _main:
     #系统调用号，write
-    movq    $0x2000004, %rax
-    movq    $0x1, %rdi         
-    leaq    message(%rip), %rsi
-    movq    $length, %rdx
+    movq $0x2000004, %rax
+    movq $0x1, %rdi         
+    leaq message(%rip), %rsi
+    movq $length, %rdx
     syscall
 
-    movq    $0x0, %rax
+    movq $0x0, %rax
     retq

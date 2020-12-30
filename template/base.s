@@ -9,10 +9,10 @@ int main(int argc, char * argv[]) {
  */
 
 _main:
-    pushq   %rbp
-    movq    %rsp, %rbp
-    movq    $0, %rax
-    popq    %rbp
+    pushq %rbp
+    movq %rsp, %rbp
+    movq $0, %rax
+    popq %rbp
     retq
 
 

@@ -6,12 +6,13 @@
 #   .long(4B)
 #   .quad(8B)
 
-    
     .section    __TEXT, __cstring
-output:    .asciz "output: %d\n"
+output:
+    .asciz "output: %d\n"
 
-    .data
-value:  .quad 0x114514
+    .section __DATA, __data
+value:
+    .quad 0x114514
     .text
     .global _main
     .p2align    4, 0x90
@@ -19,12 +20,12 @@ value:  .quad 0x114514
 #64位模式不再支持硬编码形式 需要借助rip寄存器的取标签的PIC地址
 
 _main:
-    pushq   %rbp
-    movq    %rsp, %rbp
-    leaq    output(%rip), %rdi
-    movq    value(%rip), %rsi
-    callq   _printf
+    pushq %rbp
+    movq %rsp, %rbp
+    leaq output(%rip), %rdi
+    movq value(%rip), %rsi
+    callq _printf
 
-    xorq    %rax, %rax
-    popq    %rbp
+    xorq %rax, %rax
+    popq %rbp
     retq

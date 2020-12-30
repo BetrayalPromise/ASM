@@ -5,13 +5,13 @@ G_.str.0:
     .global _main
     .p2align 4, 0x90
 _main:
-    pushq   %rbp
-    movq    %rsp, %rbp
+    pushq %rbp
+    movq %rsp, %rbp
 
-    leaq    G_.str.0(%rip), %rdi
-    callq   _printf
+    leaq G_.str.0(%rip), %rdi
+    callq _printf
 
-    xorq    %rax, %rax
+    xorq %rax, %rax
 
-    popq    %rbp
+    popq %rbp
     retq
